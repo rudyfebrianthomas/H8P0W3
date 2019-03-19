@@ -3,7 +3,7 @@ function cariMedian(arr) {
     // arr.sort(function(a,b){
     //     return a-b;
     // }) 
-    // **apa harus di sorting??**
+    // **apa harus di sorting?? kalau di sorting hasil ke 3 akan beda**
 
     var a=0,b=0;
     if (arr.length%2==0){
