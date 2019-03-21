@@ -12,7 +12,7 @@ function naikAngkot(arrPenumpang) {
                 akhir=j;
             }
         }
-        var jarak= akhir-awal;
+        var jarak= Math.abs(akhir-awal);
         hasil.push(
             { penumpang: arrPenumpang[i][0], naikDari: arrPenumpang[i][1], tujuan: arrPenumpang[i][2], bayar: jarak*2000 }
         );
@@ -21,7 +21,7 @@ function naikAngkot(arrPenumpang) {
   }
   
   //TEST CASE
-  console.log(naikAngkot([['Dimitri', 'B', 'F'], ['Icha', 'A', 'B']]));
+  console.log(naikAngkot([['Dimitri', 'F', 'B'], ['Icha', 'A', 'B']]));
   // [ { penumpang: 'Dimitri', naikDari: 'B', tujuan: 'F', bayar: 8000 },
   //   { penumpang: 'Icha', naikDari: 'A', tujuan: 'B', bayar: 2000 } ]
   

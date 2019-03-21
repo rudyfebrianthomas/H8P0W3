@@ -1,14 +1,18 @@
 function highestScore (students) {
     // Code disini
     var hasil={};
-    var a=students[0].score;
-    for (var i=0;i<students.length-1;i++){
-        if (a<students[i+1].score){
-            a=students[i+1].score;
-        }
-        hasil[students[i].class]={
-            name:'a',score:a 
-        };
+    for (var i=0;i<students.length;i++){
+       if (hasil[students[i].class]===undefined){ 
+          hasil[students[i].class]={
+            name:students[i].name,
+            score:students[i].score
+         }
+       }
+       if(hasil[students[i].class].score<students[i].score){
+          hasil[students[i].class]={
+            name:students[i].name,
+            score:students[i].score}
+       }
     }
     return hasil;
   }
@@ -43,7 +47,7 @@ function highestScore (students) {
   // }
   
   
-  /*console.log(highestScore([
+  console.log(highestScore([
     {
       name: 'Alexander',
       score: 100,
@@ -78,4 +82,4 @@ function highestScore (students) {
   // }
   
   
-  console.log(highestScore([])); //{}*/
+  console.log(highestScore([])); //{}
