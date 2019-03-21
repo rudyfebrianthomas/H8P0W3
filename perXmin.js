@@ -16,7 +16,7 @@ function digitPerkalianMinimum(angka) {
     }
     var temp;
     for (var i=0;i<digit.length-1;i++){
-        for (var j=0;j<digit.length-1;j++){
+        for (var j=0;j<digit.length-i-1;j++){
             if (digit[j]>digit[j+1]){
                 temp=digit[j];
                 digit[j]=digit[j+1];
