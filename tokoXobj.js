@@ -5,7 +5,35 @@ function countProfit(shoppers) {
                      ];
   
     // you can only write your code here!
-    
+    var arr={};
+    var res=[];
+    if (shoppers.length===0){
+      return [];
+    }
+    for (var i=0;i<listBarang.length;i++){
+      if (arr[listBarang[i][0]]===undefined){
+        arr[listBarang[i][0]]={
+          product:listBarang[i][0],
+          shoppers:[],
+          leftOver:listBarang[i][2],
+          totalProfit:0
+        }
+      }
+      var lB=listBarang[i][2];
+      for (var j=0;j<shoppers.length;j++){
+        if(arr[listBarang[i][0]].product===shoppers[j].product && lB>=shoppers[j].amount){
+          lB-=shoppers[j].amount;
+          arr[listBarang[i][0]].shoppers.push(shoppers[j].name);
+          arr[listBarang[i][0]].leftOver=arr[listBarang[i][0]].leftOver-shoppers[j].amount;
+          arr[listBarang[i][0]].totalProfit+=listBarang[i][1]*shoppers[j].amount;
+        }
+      }
+
+   }
+   for (var i in arr){
+      res.push(arr[i]);
+   }
+   return res;
   }
   
   // TEST CASES
