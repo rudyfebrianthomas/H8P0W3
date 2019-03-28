@@ -14,7 +14,7 @@ function urutkanAbjad(str) {
   }
   
   // TEST CASES
-  console.log(urutkanAbjad('hello')); // 'ehllo'
+  console.log(urutkanAbjad('he llo')); // 'ehllo'
   console.log(urutkanAbjad('truncate')); // 'acenrttu'
   console.log(urutkanAbjad('developer')); // 'deeeloprv'
   console.log(urutkanAbjad('software')); // 'aeforstw'
